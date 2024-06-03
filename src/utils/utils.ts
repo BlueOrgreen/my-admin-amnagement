@@ -41,3 +41,11 @@ export function dig<T>(arr: T[], parent: T[] = []): (T & { parent: T[] })[] {
     ])
     .flat(Infinity)
 }
+
+export const waitTime = (time: number = 100) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(true)
+    }, time)
+  })
+}

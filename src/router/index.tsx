@@ -5,6 +5,7 @@ import Exception from '@/components/Exception'
 import BasicLayout from '@/components/BasicLayout'
 import AuthPage from '@/components/AuthPage'
 import Application from '@/pages/application'
+import SystemPermission from '@/pages/permission'
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,14 @@ const router = createBrowserRouter([
         element: (
           <AuthPage authority="APPLICATION_VIEW">
             <Application />
+          </AuthPage>
+        ),
+      },
+      {
+        path: '/permission/config/system',
+        element: (
+          <AuthPage authority="PERMISSION_CONFIG_SYSTEM_LIST">
+            <SystemPermission />
           </AuthPage>
         ),
       },

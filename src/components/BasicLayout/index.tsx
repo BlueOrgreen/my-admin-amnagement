@@ -112,14 +112,13 @@ const BasicLayout: React.FC<{}> = () => {
           location={location}
           logo={logo}
           menuItemRender={(item, dom) => {
-            console.log('menuItemRender===>', item, dom)
             return <Link to={item.path}>{dom}</Link>
           }}
           route={{
             path: '/',
             children: menuList,
           }}
-          title={'云帆管理系统'}
+          title={'管理系统'}
           token={{
             header: {
               colorBgHeader: '#292f33',
