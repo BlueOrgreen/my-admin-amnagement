@@ -1,0 +1,9 @@
+.dragger-upload {
+    @apply flex;
+    
+}
+
+.dragger-upload .ant-upload-list-picture-card-container {
+    width: 240px;
+    background: #e6f7ff;
+  }

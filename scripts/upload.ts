@@ -79,6 +79,7 @@ const upload = async () => {
       depthLimit: undefined,
     },
   ])
+  console.log('input===>', input)
 
   const inputDirPath = path.resolve(process.cwd(), input)
 
@@ -109,10 +110,11 @@ const upload = async () => {
   const result = {}
 
   for (const filePath of filePathList) {
-    const { fileName, status, data } = await uploadFile(filePath)
-    if (status) {
-      result[fileName] = data
-    }
+    // const { fileName, status, data } = await uploadFile(filePath)
+    console.log(pico.red(`上传文件地址为：${filePath}`))
+    // if (status) {
+    //   result[fileName] = data
+    // }
   }
 
   try {

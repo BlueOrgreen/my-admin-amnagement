@@ -6,6 +6,7 @@ import BasicLayout from '@/components/BasicLayout'
 import AuthPage from '@/components/AuthPage'
 import Application from '@/pages/application'
 import SystemPermission from '@/pages/permission'
+import StoreMaterial from '@/pages/storeMaterial'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             <SystemPermission />
           </AuthPage>
         ),
+      },
+      {
+        path: '/content/store-materia',
+        element: <StoreMaterial />,
       },
     ],
   },

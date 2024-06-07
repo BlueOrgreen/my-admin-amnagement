@@ -54,6 +54,7 @@ const BasicLayout: React.FC<{}> = () => {
   useMount(() => {
     initialize()
   })
+  console.log('menuList', menuList)
 
   return (
     <PageContent exceptionProps={exceptionProps} status={status}>
