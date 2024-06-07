@@ -18,19 +18,24 @@ const FormAddDrawer = (props: DrawerProps) => {
   const effectRange = Form.useWatch('shopRangeType', form)
 
   const handleClose = () => {
-    Modal.confirm({
-      icon: <div className="flex justify-center gap-2">
-            <InfoCircleOutlined style={{ color: '#faad14' }} />
-            提示
-      </div>,
-      onOk: () => {
+    if (form.isFieldsTouched()) {
+        Modal.confirm({
+          icon: <div className="flex justify-center gap-2">
+                <InfoCircleOutlined style={{ color: '#faad14' }} />
+                提示
+          </div>,
+          onOk: () => {
+            onClose()
+          },
+          centered: true,
+          bodyStyle: {
+            textAlign: 'center',
+          },
+          content: '内容已经修改，是否确认关闭？',
+        })
+    } else {
         onClose()
-      },
-      bodyStyle: {
-        textAlign: 'center',
-      },
-      content: '内容已经修改，是否确认关闭？',
-    })
+    }
   }
 
   const handleOk = () => {}
