@@ -1,6 +1,14 @@
 # 管理系统
 
-##
+## 安装并启动
+
+```bash
+node 版本 16
+
+npm install
+
+npm run dev
+```
 
 **frame** 基本框架部分
 **main** 所有
