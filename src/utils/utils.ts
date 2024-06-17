@@ -158,3 +158,9 @@ export function formatFileData(
     return []
   }
 }
+
+
+export const getLabel = (
+  value: string | number,
+  map: { label: string; value: number | string; [key: string]: any }[],
+) => map.find((i) => i.value === value)?.label ?? ''
