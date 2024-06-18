@@ -164,3 +164,19 @@ export const getLabel = (
   value: string | number,
   map: { label: string; value: number | string; [key: string]: any }[],
 ) => map.find((i) => i.value === value)?.label ?? ''
+
+
+export function treeFindPath (tree: any[], func: (val: any) => boolean, path: any[] = []): any[] {
+  if (!tree) return []
+  for (let i = 0; i < tree.length; i++) {
+    const item = tree[i]
+    path.push(item.id)
+    if (func(item)) return path
+    if (item.children) {
+      const findChildren = treeFindPath(item.children, func, path)
+      if (findChildren.length) return findChildren
+    }
+    path.pop()
+  }
+  return []
+}
