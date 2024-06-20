@@ -60,23 +60,23 @@ const SystemPermission = () => {
     setDataSource(newDataSource)
     message.success('修改列表排序成功')
   }
+  
 
   return (
-    <PageContainer title="系统权限">
-      <Card>
-        <DragSortTable
-          columns={columns}
-          dataSource={data}
-          dragSortKey="sort"
-          // headerTitle="拖拽排序(默认把手)"
-          pagination={false}
-          rowKey="key"
-          search={false}
-          toolBarRender={false}
-          onDragSortEnd={handleDragSortEnd}
-        />
-      </Card>
-    </PageContainer>
+    <div>111</div>
+    // <PageContainer title="系统权限">
+    //     <DragSortTable
+    //       columns={columns}
+    //       dataSource={data}
+    //       dragSortKey="sort"
+    //       // headerTitle="拖拽排序(默认把手)"
+    //       pagination={false}
+    //       rowKey="key"
+    //       search={false}
+    //       toolBarRender={false}
+    //       onDragSortEnd={handleDragSortEnd}
+    //     />
+    // </PageContainer>
   )
 }
 

@@ -127,6 +127,7 @@ const BasicLayout: React.FC<{}> = () => {
               colorTextRightActionsItem: '#dfdfdf',
             },
             pageContainer: {
+              paddingBlockPageContainerContent: 0,
               paddingInlinePageContainerContent: 0,
               colorBgPageContainer: '#fff',
             },

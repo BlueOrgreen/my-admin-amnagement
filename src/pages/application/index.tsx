@@ -81,7 +81,6 @@ const Application = () => {
 
   return (
     <PageContainer title="输入表单">
-      <Card>
         <ProForm
           submitter={{
             render: (_, dom) => <FooterToolbar>{dom}</FooterToolbar>,
@@ -136,7 +135,6 @@ const Application = () => {
             />
           </ProForm.Item>
         </ProForm>
-      </Card>
     </PageContainer>
   )
 }
