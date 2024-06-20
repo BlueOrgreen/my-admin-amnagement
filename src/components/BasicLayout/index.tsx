@@ -94,7 +94,11 @@ const BasicLayout: React.FC<{}> = () => {
             },
           }}
           breadcrumbProps={{
-            itemRender: (item) => item.title,
+            itemRender: (item) => {
+              console.log('breadcrumbProps', item);
+              
+              return item.title;
+            }
           }}
           headerTitleRender={(logo, title) => {
             return (

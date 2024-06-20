@@ -63,20 +63,19 @@ const SystemPermission = () => {
   
 
   return (
-    <div>111</div>
-    // <PageContainer title="系统权限">
-    //     <DragSortTable
-    //       columns={columns}
-    //       dataSource={data}
-    //       dragSortKey="sort"
-    //       // headerTitle="拖拽排序(默认把手)"
-    //       pagination={false}
-    //       rowKey="key"
-    //       search={false}
-    //       toolBarRender={false}
-    //       onDragSortEnd={handleDragSortEnd}
-    //     />
-    // </PageContainer>
+    <PageContainer title="系统权限">
+        <DragSortTable
+          columns={columns}
+          dataSource={data}
+          dragSortKey="sort"
+          // headerTitle="拖拽排序(默认把手)"
+          pagination={false}
+          rowKey="key"
+          search={false}
+          toolBarRender={false}
+          onDragSortEnd={handleDragSortEnd}
+        />
+    </PageContainer>
   )
 }
 

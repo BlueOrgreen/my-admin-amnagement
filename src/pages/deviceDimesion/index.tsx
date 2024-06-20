@@ -1,12 +1,13 @@
-
+import SideLeft from '@/components/SideLeft'
+import './index.less'
 
 type IDeviceDimesionProps = {}
 
 const DeviceDimesion: React.FC<IDeviceDimesionProps> = () => {
     return (
-        <div>
-            <div>left</div>
-            <div>right</div>
+        <div className="deviceDimesion">
+            <SideLeft />
+            <div className='contentRight'>content</div>
         </div>
     )
 }

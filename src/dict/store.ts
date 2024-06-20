@@ -33,3 +33,13 @@ export const ENABLE_STATUS = [
     },
   ]
   
+  export const sortFieldOptions = [
+    {
+        label: '按更新时间排序',
+        value: 'deviceTypeUpdateTime'
+    },
+    {
+        label: '按名称排序',
+        value: 'deviceTypeName'
+    }
+]
