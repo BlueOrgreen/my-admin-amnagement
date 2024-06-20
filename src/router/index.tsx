@@ -7,6 +7,7 @@ import AuthPage from '@/components/AuthPage'
 import Application from '@/pages/application'
 import SystemPermission from '@/pages/permission'
 import StoreMaterial from '@/pages/storeMaterial'
+import DeviceDimesion from '@/pages/deviceDimesion'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/content/store-materia',
         element: <StoreMaterial />,
+      },
+      {
+        path: '/device/device-dimension',
+        element: <DeviceDimesion />,
       },
     ],
   },

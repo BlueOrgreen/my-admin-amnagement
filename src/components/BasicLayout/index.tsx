@@ -126,6 +126,10 @@ const BasicLayout: React.FC<{}> = () => {
               colorHeaderTitle: '#fff',
               colorTextRightActionsItem: '#dfdfdf',
             },
+            pageContainer: {
+              paddingInlinePageContainerContent: 0,
+              colorBgPageContainer: '#fff',
+            },
             sider: {
               colorMenuBackground: '#fff',
             },
