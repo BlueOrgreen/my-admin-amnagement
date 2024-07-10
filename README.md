@@ -16,7 +16,7 @@ npm run dev
 ## 打包配置
 
 **rsbuild**
-
+11
 ```bash
 "@rsbuild/core": "0.6.15",
 "@rsbuild/plugin-babel": "0.6.15",
