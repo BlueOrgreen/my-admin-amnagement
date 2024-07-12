@@ -68,4 +68,14 @@ export default defineConfig({
       '@': './src',
     },
   },
+  // 打包优化
+  performance: {
+    prefetch: true,
+    chunkSplit: {
+      strategy: 'single-vendor',
+    },
+    removeConsole:
+      process.env.REACT_APP_API_ENV === 'prod' ||
+      process.env.REACT_APP_API_ENV === 'stg',
+  },
 })

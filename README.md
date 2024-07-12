@@ -61,4 +61,8 @@ npm run dev
 
 **Rsbuild**
 
-- [x] 
+- [x] WebUpdateNotificationPlugin 版本更新插件提示
+
+**Webpack**
+
+webpack 打包配置 **build** 目录下
