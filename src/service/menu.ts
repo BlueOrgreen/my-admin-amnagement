@@ -204,10 +204,10 @@ export const fetchMenuList = (): Promise<any> => {
         },
         {
           id: 13421,
-          name: '内容管理',
+          name: '文章管理',
           path: '/content',
           hideInMenu: false,
-          navName: '内容管理',
+          navName: '文章管理',
           webUrl: '/content',
           visible: true,
           icon: '',
@@ -215,13 +215,13 @@ export const fetchMenuList = (): Promise<any> => {
           children: [
             {
               id: 13422,
-              navName: '门店通素材管理',
+              navName: '文章列表管理',
               webUrl: '/content/store-materia',
               visible: true,
               icon: '',
               privType: 1,
               children: [],
-              name: '门店通素材管理',
+              name: '文章列表管理',
               path: '/content/store-materia',
               hideInMenu: false,
             },

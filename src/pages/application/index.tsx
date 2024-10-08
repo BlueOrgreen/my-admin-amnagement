@@ -108,7 +108,7 @@ const Application = () => {
           <ProForm.Item
             initialValue={defaultData}
             label="数组数据"
-            name="dataSource"
+            name="field"
             trigger="onValuesChange"
           >
             <EditableProTable<DataSourceType>
@@ -122,7 +122,7 @@ const Application = () => {
                 },
               }}
               recordCreatorProps={{
-                newRecordType: 'dataSource',
+                newRecordType: 'field1222',
                 position: 'bottom',
                 record: () => ({
                   id: Date.now(),

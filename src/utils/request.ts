@@ -81,18 +81,18 @@ async function request(
   const token = localStorage.getItem('TOKEN')
   const user_name = localStorage.getItem('USER_NAME')
 
-  if (!whiteList.includes(options?.url ?? '') && !token) {
-    // sso.login()
-
-    return {
-      code: 401,
-      message: codeMessage[401],
-      data: {},
-    }
-  }
+  // TODO 暂时没有 Token
+  // if (!whiteList.includes(options?.url ?? '') && !token) {
+  //   // sso.login()
+  //   return {
+  //     code: 401,
+  //     message: codeMessage[401],
+  //     data: {},
+  //   }
+  // }
   const defaultOptions: AxiosRequestConfig = {
     method: 'GET',
-    baseURL,
+    // baseURL,
     paramsSerializer: function (params) {
       return qs.stringify(params, { arrayFormat: 'repeat' })
     },
@@ -165,6 +165,14 @@ async function request(
       }
       break
     case 401:
+      notification.warning({
+        message: `请求失败：${result.code || 600}`,
+        description:
+          newTipOptions.errorText ||
+          result?.msg ||
+          result?.message ||
+          '网络请求遇到了点问题～',
+      })
       // sso.login()
       break
     default:

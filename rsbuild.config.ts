@@ -13,6 +13,11 @@ export default defineConfig({
   plugins: [pluginReact(), pluginSvgr(), pluginStylus()],
   server: {
     port: 8900,
+    proxy: {
+      '/api': {
+        target: 'http://0.0.0.0:3009',
+      },
+    }
   },
   html: {
     template: './public/index.html',

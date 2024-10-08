@@ -180,3 +180,12 @@ export function treeFindPath (tree: any[], func: (val: any) => boolean, path: an
   }
   return []
 }
+
+
+export const matchLabel = (
+  value: string | number,
+  map: { label: string; value: number | string; [key: string]: any }[],
+  labelList: string[],
+) => {
+  return labelList.includes(getLabel(value, map))
+}
