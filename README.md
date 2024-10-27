@@ -63,6 +63,10 @@ npm run dev
 
 - [x] WebUpdateNotificationPlugin 版本更新插件提示
 
+## 布局
+
+- 查询表单布局 **src/pages/permission/organization/index.tsx**
+
 **Webpack**
 
 webpack 打包配置 **build** 目录下
