@@ -1,0 +1,39 @@
+.page-flex {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+.page-search {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    // background-color: aqua;
+    // :global {
+        .ant-form-item {
+            min-width: 280px;
+            margin-bottom: 0;
+        }
+        .ant-picker-range {
+            min-width: 487px;
+        }
+    // }
+    .border-left {
+        position: relative;
+        &::before {
+          content: ' ';
+          height: 100%;
+          position: absolute;
+          background-color: rgba(5, 5, 5, 0.1);
+          width: 1px;
+          left: -20px;
+        }
+    }
+
+    .search-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 20px
+    }
+}

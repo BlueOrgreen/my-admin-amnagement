@@ -8,6 +8,7 @@ import Application from '@/pages/application'
 import SystemPermission from '@/pages/permission'
 import StoreMaterial from '@/pages/storeMaterial'
 import DeviceDimesion from '@/pages/deviceDimesion'
+import Organization from '@/pages/permission/organization'
 
 const router = createBrowserRouter([
   {
@@ -32,9 +33,13 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: '/content/store-materia',
-        element: <StoreMaterial />,
+        path: 'permission/config/organization',
+        element: <Organization />
       },
+      // {
+      //   path: '/content/store-materia',
+      //   element: <StoreMaterial />,
+      // },
       {
         path: '/device/device-dimension',
         element: <DeviceDimesion />,
