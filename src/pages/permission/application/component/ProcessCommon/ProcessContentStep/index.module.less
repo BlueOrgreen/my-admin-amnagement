@@ -1,0 +1,80 @@
+.process-content-step-title {
+  display: flex;
+  flex-direction: column;
+  padding-top: 6px;
+  padding-left: 4px;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 20px;
+  color: #999999;
+}
+
+.operation-step-card {
+  :global {
+    .ant-upload,
+    .ant-upload-list-picture-card-container {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .operation-step-card-step {
+    position: relative;
+    // display: flex;
+    // border-style: solid;
+    // border-width: 0 0 1px 0;
+    // border-color: #e5e6eb;
+    .operation-step-card-step-formitem {
+      position: absolute;
+      z-index: 1000;
+      margin: 0 8px;
+      top: 0;
+      left: 0;
+      // background-color: aqua;
+      width: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 42px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #111111;
+    }
+  }
+}
+
+.operation-step-card-editor {
+  border: none !important;
+  :global {
+    > div {
+      border-color: #e5e6eb !important;
+      // padding-left: 48px;
+      .w-e-bar.w-e-bar-show.w-e-toolbar {
+        padding-left: 64px;
+      }
+    }
+    .w-e-bar-item button {
+      padding: 0 !important;
+    }
+    .w-e-text-container {
+      background-color: #f7f8fa;
+    }
+    .w-e-text-container p {
+      margin: 0px;
+    }
+  }
+}
+
+.operation-step-card-images {
+  position: relative;
+  padding: 0 12px;
+}
+
+.operation-step-card-images-count {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-weight: normal;
+  line-height: 22px;
+  color: #c9cdd4;
+}

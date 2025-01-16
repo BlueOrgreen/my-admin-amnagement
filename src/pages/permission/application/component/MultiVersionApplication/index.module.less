@@ -1,0 +1,79 @@
+.multi-version-application {
+  position: relative;
+}
+
+.delete-tabs-origin {
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  color: #ff5656;
+  background: linear-gradient(
+    270deg,
+    rgba(245, 63, 63, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  padding: 10px 20px;
+  top: 3px;
+  right: 0;
+  z-index: 100;
+}
+
+.delete-tabs-origin.dragging {
+  visibility: visible;
+}
+
+.add-application-btn {
+  position: absolute;
+  width: 110px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 10px;
+  right: 0;
+}
+
+.add-application-popover-content {
+  > div {
+    display: flex;
+    justify-content: space-between;
+    min-width: 120px;
+    // background-color: aqua;
+    padding: 10px 12px 6px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      background: #e8f3ff;
+    }
+  }
+  .disabled {
+    color: #1966ff;
+  }
+}
+
+.copy-process {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  margin-bottom: 24px;
+  background: rgba(242, 243, 245, 1);
+  .copy-process-text {
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+  }
+  &:hover {
+    background: rgba(242, 243, 245, 0.75);
+  }
+}
+
+.empty-text {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  color: #4e5969;
+}

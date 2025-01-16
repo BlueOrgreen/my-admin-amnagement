@@ -23,10 +23,7 @@ const FormAddDrawer = (props: DrawerProps) => {
   const [fileList, setFileList] = useState<any>([]);
 
   const { loading: createPostLoading, run: createPost } = useRequest(
-    (query) =>
-      API.createPost({
-        ...query,
-      }),
+    (query) => API.createPost(query),
     {
       manual: true,
       onSuccess: ({ code }) => {
@@ -80,13 +77,20 @@ const FormAddDrawer = (props: DrawerProps) => {
     }
   }
 
-  const handleOk = () => {
-    form.validateFields().then(values => {
-      createPost(values)
-    }).catch(error => {
+  // 提交接口数据处理
+  const formatVlues = (res: Record<string, any>) => {
+    return res
+  }
+
+  const handleOk = async () => {
+    try {
+      await form.validateFields()
+      const vals = form.getFieldsValue()
+      createPost(formatVlues(vals)) 
+    } catch(error: any) {
       const fields = error['errorFields'][0]['name']
       form.scrollToField(fields, { behavior: 'smooth', block: 'center' })
-    })
+    }
   }
 
   const beforeUpload = (file: UploadFile) => {

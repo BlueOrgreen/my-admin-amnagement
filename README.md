@@ -16,7 +16,7 @@ npm run dev
 ## 打包配置
 
 **rsbuild**
-11
+
 ```bash
 "@rsbuild/core": "0.6.15",
 "@rsbuild/plugin-babel": "0.6.15",
@@ -50,6 +50,14 @@ npm run dev
 
 可参考功能项，可用于管理后台中
 
+### 布局
+
+- 查询表单布局 **src/pages/permission/organization/index.tsx**
+
+### 表单
+
+- 动态表单 + 可拖动 Tab栏 **src/pages/permission/application/index.tsx**
+
 ### 组件类
 
 - [x] 带上传进度以及上传异常情况 - 上传组件
@@ -63,9 +71,6 @@ npm run dev
 
 - [x] WebUpdateNotificationPlugin 版本更新插件提示
 
-## 布局
-
-- 查询表单布局 **src/pages/permission/organization/index.tsx**
 
 **Webpack**
 

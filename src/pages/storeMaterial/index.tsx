@@ -8,11 +8,9 @@ import { insertEveryNth } from '@/utils/utils'
 import { commonTableProps } from '@/utils/const'
 import { log } from 'console'
 
-type IProps = {
-  columnActions: any[]
-}
 
-const StoreMaterial = (props: IProps) => {
+
+const StoreMaterial = () => {
   const [open, { toggle: toggleOpen }] = useToggle(false)
   const {
     tableProps: inTableProps,

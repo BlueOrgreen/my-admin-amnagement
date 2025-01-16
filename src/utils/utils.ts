@@ -1,4 +1,28 @@
+import { NamePath } from "antd/es/form/interface"
 import dayjs, { Dayjs } from "dayjs"
+import { isArray } from "lodash"
+import qs from "qs"
+
+export const mock = <T>(
+  data: T,
+  params?: any,
+): Promise<{
+  code: number
+  msg: string
+  data: T
+}> => {
+  const res = {
+    code: 0,
+    msg: '请求成功',
+    data,
+  }
+  console.log('打印请求参数', params)
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(res)
+    }, 1000)
+  })
+}
 
 export const sleep = (time: number) =>
   new Promise((resolve, reject) => {
@@ -182,10 +206,34 @@ export function treeFindPath (tree: any[], func: (val: any) => boolean, path: an
 }
 
 
-export const matchLabel = (
-  value: string | number,
-  map: { label: string; value: number | string; [key: string]: any }[],
-  labelList: string[],
-) => {
-  return labelList.includes(getLabel(value, map))
+export function deepClone<T>(obj: any, excludeFields?: string[]) {
+  if (obj === null || typeof obj !== 'object') {
+    return obj
+  }
+  if (Object.prototype.toString.call(obj) === '[object Array]') {
+    return obj.map((element: any) => deepClone(element, excludeFields))
+  }
+  const newObj: Record<string, any> = {}
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      if (!excludeFields || excludeFields.indexOf(key) === -1) {
+        newObj[key] = deepClone(obj[key], excludeFields)
+      }
+    }
+  }
+  return newObj
+}
+
+export const resolveName = (name: NamePath, ...rest: NamePath[]) =>
+  isArray(name) ? [...name, ...rest] : [name, ...rest]
+
+
+export const getSearchParams = () => {
+  const {
+    location: { search },
+  } = history
+  const queryParams = qs.parse(search, {
+    ignoreQueryPrefix: true,
+  })
+  return queryParams
 }

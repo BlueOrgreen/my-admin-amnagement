@@ -27,7 +27,7 @@ function Application() {
     <ConfigProvider
       theme={{
         token: {
-          colorPrimary: theme.primary,
+          // colorPrimary: theme.primary,
           borderRadius: 4,
         },
         components: {
@@ -64,7 +64,6 @@ function Application() {
             headerBg: '#F2F3F5'
           },
           Button: {
-            // colorInfoBorder: 'red',
             defaultBg: theme.defaultBg,
             defaultBorderColor: theme.defaultBorderColor,
             borderRadius: 3,
