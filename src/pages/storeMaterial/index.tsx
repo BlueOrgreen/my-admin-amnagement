@@ -7,11 +7,16 @@ import FormAddDrawer from './components/FormAddDrawer'
 import { insertEveryNth } from '@/utils/utils'
 import { commonTableProps } from '@/utils/const'
 import { log } from 'console'
+import { useState } from 'react'
 
 
 
 const StoreMaterial = () => {
   const [open, { toggle: toggleOpen }] = useToggle(false)
+  const [queryFormData, setQueryFormData] = useState<Record<string, any>>({
+    name: undefined,
+    category: undefined,
+  })
   const {
     tableProps: inTableProps,
     refresh,
@@ -35,6 +40,9 @@ const StoreMaterial = () => {
           total: 0,
         }
       }
+    },
+    {
+      refreshDeps: [queryFormData]
     }
   )
   const handleAdd = () => {
@@ -165,6 +173,7 @@ const StoreMaterial = () => {
           showSizeChanger: true,
           pageSizeOptions: ['10', '20', '30'],
         }}
+        sticky={{ offsetHeader: -24 }}
       />
       <FormAddDrawer handleRefresh={() => refresh()} open={open} onClose={handleCloseDrawer} />
     </PageContainer>
