@@ -251,6 +251,31 @@ export const fetchMenuList = (): Promise<any> => {
               hideInMenu: false,
             },
           ],
+        },
+        {
+          id: 13425,
+          name: '低代码页面',
+          path: '/lowcode',
+          hideInMenu: false,
+          navName: '设备管理',
+          webUrl: '/lowcode',
+          visible: true,
+          icon: '',
+          privType: 1,
+          children: [
+            {
+              id: 13422,
+              navName: '低代码页面1',
+              webUrl: '/lowcode/lowcode-detail',
+              visible: true,
+              icon: '',
+              privType: 1,
+              children: [],
+              name: '低代码页面1',
+              path: '/lowcode/lowcode-detail',
+              hideInMenu: false,
+            },
+          ],
         }
         // {
         //   id: 13421,

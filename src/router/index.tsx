@@ -10,6 +10,7 @@ import StoreMaterial from '@/pages/storeMaterial'
 import DeviceDimesion from '@/pages/deviceDimesion'
 import Organization from '@/pages/permission/organization'
 import SystemPermission from '@/pages/permission'
+import LowcodeDetail from '@/pages/lowcode/lowcode-detail'
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: '/device/device-dimension',
         element: <DeviceDimesion />,
+      },
+      {
+        path: '/lowcode/lowcode-detail',
+        element: <LowcodeDetail />,
       },
     ],
   },
