@@ -5,12 +5,33 @@ import { pluginReact } from '@rsbuild/plugin-react'
 import { pluginSvgr } from '@rsbuild/plugin-svgr'
 import { pluginStylus } from '@rsbuild/plugin-stylus'
 import { WebUpdateNotificationPlugin } from '@plugin-web-update-notification/webpack'
+import { pluginModuleFederation } from '@module-federation/rsbuild-plugin'
+import { pluginLess } from '@rsbuild/plugin-less';
 
 const { publicVars } = loadEnv({ prefixes: ['REACT_APP_'] })
 console.log('publicVars===>', publicVars)
 
 export default defineConfig({
-  plugins: [pluginReact(), pluginSvgr(), pluginStylus()],
+  plugins: [pluginReact(), pluginSvgr(), pluginStylus(), pluginLess(),
+     pluginModuleFederation({
+      name: 'fe_runtime_host',
+      // remotes: {
+      //   fe_runtime: 'fe_runtime@http://localhost:10001/remoteEntry.js',
+      // },
+      remotes: {
+        fe_runtime_remote: 'fe_runtime_remote@http://localhost:10001/remoteEntry.js',
+      },
+      shared: {
+        react: { singleton: true, eager: true, requiredVersion: false },
+        'react-dom': { singleton: true, eager: true, requiredVersion: false },
+        '@module-federation/bridge-react': {
+          singleton: true,
+          eager: true,
+          requiredVersion: false,
+        },
+      },
+    }),
+  ],
   server: {
     port: 8900,
     proxy: {
@@ -53,19 +74,19 @@ export default defineConfig({
           }),
       ].filter(Boolean) as any,
     },
-    bundlerChain(chain, utils) {
-      chain.module
-        .rule('svg')
-        .oneOf('sprite')
-        .test(/./)
-        .include.add(join(__dirname, './src/icons/svg'))
-        .end()
-        .before('svg-asset-url')
-        .use('compat-svg-sprite-loader')
-        .loader(join(__dirname, './scripts/compat-svg-sprite-loader.mjs'))
-        .options({ symbolId: 'icon-[name]' })
-        .end()
-    },
+    // bundlerChain(chain, utils) {
+    //   chain.module
+    //     .rule('svg')
+    //     .oneOf('sprite')
+    //     .test(/./)
+    //     .include.add(join(__dirname, './src/icons/svg'))
+    //     .end()
+    //     .before('svg-asset-url')
+    //     .use('compat-svg-sprite-loader')
+    //     .loader(join(__dirname, './scripts/compat-svg-sprite-loader.mjs'))
+    //     .options({ symbolId: 'icon-[name]' })
+    //     .end()
+    // },
   },
   source: {
     define: publicVars,
